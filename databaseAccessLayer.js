@@ -1,6 +1,6 @@
 const database = include("/databaseConnection");
 
-async function getAllRestaurants() {
+async function getRestaurants() {
   let sqlQuery = `
         SELECT restaurant_id, name, description
         FROM restaurant;
@@ -11,13 +11,12 @@ async function getAllRestaurants() {
     console.log("results: ", results[0]);
     return results[0];
   } catch (err) {
-    console.log("Error selecting from restaurant table");
+    console.log("Cannot select restaurant table");
     console.log(err);
     return null;
   }
 }
 
-const passwordPepper = "SeCretPeppa4MySal+";
 
 async function addRestaurant(postData) {
   console.log("postData: ", postData);
@@ -63,4 +62,4 @@ async function deleteRestaurant(restaurantId) {
   }
 }
 
-module.exports = { getAllRestaurants, addRestaurant, deleteRestaurant };
+module.exports = { getRestaurants, addRestaurant, deleteRestaurant };
