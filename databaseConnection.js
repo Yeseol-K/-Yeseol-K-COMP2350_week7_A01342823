@@ -1,4 +1,5 @@
 const mysql = require("mysql2/promise");
+const mysql = require("mysql");
 
 const is_render = process.env.IS_RENDER || false;
 

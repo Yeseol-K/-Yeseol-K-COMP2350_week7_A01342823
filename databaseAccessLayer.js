@@ -1,4 +1,4 @@
-const database = require("/databaseConnection");
+const database = include("/databaseConnection");
 
 async function getAllRestaurants() {
   let sqlQuery = `
