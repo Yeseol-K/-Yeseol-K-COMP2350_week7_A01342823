@@ -7,7 +7,7 @@ global.include = function (file) {
   return require(abs_path("/" + file));
 };
 
-const mysql = require("mysql/promise");
+const mysql = require("mysql");
 const express = require("express");
 const database = include("databaseConnection");
 const router = include("routes/router");
