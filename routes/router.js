@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.post("/addUser", async (req, res) => {
+router.post("/addRestaurant", async (req, res) => {
   console.log("form submit");
   console.log(req.body);
   try {
@@ -36,21 +36,20 @@ router.post("/addUser", async (req, res) => {
   }
 });
 
-router.get('/deleteUser', async (req, res) => {
-	console.log("delete user");
-   console.log(req.query);
-   let restaurantID = req.query.id;
-   if (restaurantID) {
-   const success = await dbModel.deleteRestaurant(restaurantID);
-   if (success) {
-   res.redirect("/");
-   }
-   else {
-   res.render('error', {message: 'Error writing to MySQL'});
-   console.log("Error writing to mysql");
-   console.log(err);
-   }
-   }
-   });
-   
+router.get("/deleteRestaurant", async (req, res) => {
+  console.log("delete user");
+  console.log(req.query);
+  let restaurantID = req.query.id;
+  if (restaurantID) {
+    const success = await dbModel.deleteRestaurant(restaurantID);
+    if (success) {
+      res.redirect("/");
+    } else {
+      res.render("error", { message: "Error writing to MySQL" });
+      console.log("Error writing to mysql");
+      console.log(err);
+    }
+  }
+});
+
 module.exports = router;
