@@ -67,11 +67,12 @@ router.get("/review", async (req, res) => {
   }
 });
 
+
 router.get("/deleteReview", async (req, res) => {
   let restaurantID = req.query.id;
   if (restaurantID) {
     const success = await dbModel.deleteReview(restaurantID);
-    console.log("DELETE PLEASEE!!!!!!");
+    console.log("DELETE PLEASEE!!!!!!")
     if (success) {
       res.redirect("/");
     } else {
@@ -82,9 +83,11 @@ router.get("/deleteReview", async (req, res) => {
   }
 });
 
+
+
 router.post("/addReview", async (req, res) => {
   try {
-    console.log(req.body);
+    console.log(req.body)
     const success = await dbModel.addReview(req.body);
     if (success) {
       res.redirect("/");

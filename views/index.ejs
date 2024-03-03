@@ -27,12 +27,12 @@
                 <td><%= restaurant[i].description %></td>
                 <td>
                   <a href="/deleteRestaurant?id=<%= restaurant[i].restaurant_id %>">
-                    <span class="icon is-small"> <i class="fas fa-user-times"></i> </span
+                    <span class="icon is-small">  <i class="fas fa-trash"></i> </span
                   ></a>
                 </td>
                 <td>
-                  <a href="/star?id=<%= restaurant[i].restaurant_id %>">
-                    <span class="icon is-small"> <i class="fas fa-user-times"></i> </span
+                  <a href="/review?id=<%= restaurant[i].restaurant_id %>">
+                    <span class="icon is-small"> <i class="fas fa-star"></i> </span
                   ></a>
                 </td>
               </tr>

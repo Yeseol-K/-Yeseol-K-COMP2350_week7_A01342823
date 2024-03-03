@@ -32,7 +32,7 @@
                 <td><%= restaurant[i].rating %></td>
                 <td>
                   <a href="/deleteReview?id=<%= restaurant[i].review_id %>">
-                    <span class="icon is-small"> <i class="fas fa-trash"></i> </span
+                    <span class="icon is-small">  <i class="fas fa-trash"></i> </span
                   ></a>
                 </td>
               </tr>
@@ -47,8 +47,8 @@
           <% } %>
 
           <form action="/addReview" method="post">
-            <input type="hidden" name="restaurant_id" value="<%= id %>" />
-
+            <input type="hidden" name="restaurant_id" value="<%= id %>">
+            
             <div class="field is-horizontal">
               <div class="field-label is-normal">
                 <label class="label">Add New Review</label>
@@ -66,7 +66,7 @@
                 </div>
                 <div class="field">
                   <p class="control is-expanded">
-                    <input name="rating" class="input" type="number" placeholder="Rating (0 to 5)" min="0" max="5" />
+                    <input name="rating" class="input" type="number" placeholder="Rating (0 to 5)" min="0" max="5"/>
                   </p>
                 </div>
                 <div class="field">

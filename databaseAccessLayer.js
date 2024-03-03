@@ -97,19 +97,20 @@ async function getRestaurantById(restaurantId) {
     const results = await database.query(sqlQuery, params);
     return results[0][0];
   } catch (err) {
-    console.log("Error selecting restaurant:", err);
+    console.log('Error selecting restaurant:', err);
     throw err;
   }
 }
+
 
 async function deleteReview(reviewId) {
   let sqlDeleteRestaurant = `
         DELETE FROM review
         WHERE review_id = :reviewId
     `;
-  let params = {
-    reviewId: reviewId,
-  };
+    let params = {
+      reviewId: reviewId,
+    };
   console.log(sqlDeleteRestaurant);
   try {
     await database.query(sqlDeleteRestaurant, params);
@@ -119,7 +120,7 @@ async function deleteReview(reviewId) {
     return false;
   }
 }
-addReview;
+addReview
 
 async function addReview(postData) {
   console.log("postData: ", postData);
@@ -131,7 +132,7 @@ async function addReview(postData) {
     restaurant_id: postData.restaurant_id,
     name: postData.name,
     review: postData.review,
-    rating: postData.rating,
+    rating: postData.rating
   };
   console.log(sqlInsertRestaurant);
   try {
