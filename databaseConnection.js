@@ -12,8 +12,8 @@ const dbConfigQoddi = {
 };
 
 const dbConfigLocal = {
-  host: "root",
-  user: "localhost",
+  host: "localhost",
+  user: "root",
   password: "abc123!",
   database: "freedb_COMP2350_A01342823",
   multipleStatements: false,
